@@ -4,7 +4,7 @@ output-file: "Nome do alocado - análise 3 e 4"
 ---
 
 ```{r setup}
-source("rdocs/source/consultor2.R")
+source("rdocs/source/preard.R")
 ```
 
 
