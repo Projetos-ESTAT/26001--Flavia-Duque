@@ -1,0 +1,78 @@
+---
+# Nome do arquivo PDF gerado na pasta resultado
+output-file: "Nome do alocado - análise 5 e 6"
+---
+
+```{r setup}
+source("rdocs/source/consultor3.R")
+```
+
+```{r}
+# Rodar apenas uma vez na vida!
+## Instalando o tinytex(pacote apenas)
+### CRAN version
+install.packages('tinytex')
+
+
+## Baixando o tinytex
+library(tinytex)
+tinytex::install_tinytex()
+```
+
+
+
+
+# Objetivo
+
+Esse template foi criado para o alocado conseguir observar como ficaria sua análise o arquivo principal. É daqui que o gerente de projetos irá copiar a análise e inserir no documento principal que gerará o relatório estatístico.
+
+# Análises
+
+## Análise 5
+
+## Análise 6
+
+```{r}
+#| label: fig-
+#| fig-cap: "Gráfico "
+
+
+
+```
+
+
+::: {#quad- layout-align="center" quad-pos="H"}
+```{=latex}
+
+
+
+```
+
+Medidas resumo da 
+:::
+
+
+
+::: {#tbl-modalidades layout-align="center" tbl-pos="H"}
+```{=latex}
+
+
+```
+
+
+:::
+
+
+
+
+$\ref{fig-}$
+
+[@tbl-]
+
+
+[**Quadro** @quad-]
+
+
+
+
+
