@@ -1,24 +1,34 @@
 source("rdocs/source/packages.R")
 
-# ---------------------------------------------------------------------------- #
+library(readxl)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
 
-#        ______   _____  ________      ________ 
-#      |  ____| / ____| |__   __| /\  |__   __|
-#     | |__    | (___     | |   /  \    | |   
-#    |  __|    \___ \    | |  / /\ \   | |   
-#   | |____   ____) |   | |  /____ \  | |   
-#  |______   |_____/   |_| /_/    \_\|_|   
-#  
-#         Consultoria estatística 
-#
+# Ler apenas a aba "Indicadores"
+dados_raw <- read_excel("C:/Users/david/Downloads/EficinciaFinanceira-Dadosfinais.xlsx", sheet = "Indicadores")
 
-# ---------------------------------------------------------------------------- #
-# ############################## README ###################################### #
-# Consultor, favor utilizar este arquivo .R para realizar TODAS as análises
-# alocadas a você neste projeto pelo gerente responsável, salvo instrução 
-# explícita do gerente para mudança.
-#
-# Escreva seu código da forma mais clara e legível possível, eliminando códigos
-# de teste depreciados, ou ao menos deixando como comentário. Dê preferência
-# as funções dos pacotes contidos no Tidyverse para realizar suas análises.
-# ---------------------------------------------------------------------------- #
+# Remover a primeira linha (nomes dos indicadores)
+dados <- dados_raw[-1, ]
+
+# Separar identificadores
+ids <- dados[,1:2]
+valores <- dados[,3:ncol(dados)]
+
+# Converter todas as variáveis para numérico
+valores <- valores %>% mutate(across(everything(), as.numeric))
+
+# Estatísticas descritivas
+descr <- valores %>%
+  summarise(across(everything(),
+                   list(
+                     n = ~sum(!is.na(.)),
+                     media = ~mean(., na.rm=TRUE),
+                     mediana = ~median(., na.rm=TRUE),
+                     sd = ~sd(., na.rm=TRUE),
+                     min = ~min(., na.rm=TRUE),
+                     max = ~max(., na.rm=TRUE)
+                   )))
+
+descr
+

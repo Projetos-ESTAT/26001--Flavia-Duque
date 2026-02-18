@@ -7,68 +7,40 @@ output-file: "Nome do alocado - análise 1 e 2"
 source("rdocs/davi.R")
 ```
 
-```{r}
-# Rodar apenas uma vez na vida!
-## Instalando o tinytex(pacote apenas)
-### CRAN version
-install.packages('tinytex')
-
-
-## Baixando o tinytex
-library(tinytex)
-tinytex::install_tinytex()
-```
-
-# Objetivo
-
-Esse template foi criado para o alocado conseguir observar como ficaria sua análise o arquivo principal. É daqui que o gerente de projetos irá copiar a análise e inserir no documento principal que gerará o relatório estatístico.
-
 # Análises
 
 ## Análise 1
 
-## Análise 2
+### Caracterização da amostra
 
-```{r}
-#| label: fig-
-#| fig-cap: "Gráfico "
+A base de dados é composta por 120 consórcios públicos intermunicipais, observados no período de 2020 a 2024. Para cada consórcio, são considerados oito indicadores financeiros anuais, os quais refletem aspectos relacionados à arrecadação, estrutura de gastos, equilíbrio orçamentário e endividamento. Observa-se a presença de valores ausentes em determinados indicadores e anos, especialmente nos períodos mais antigos, reduzindo o número efetivo de observações em algumas variáveis.
 
 
+### Receita per capita
 
-```
+A variável receita per capita apresenta elevada dispersão ao longo do período analisado. Em 2024, observa-se média aproximada de R$ 74,65, acompanhada de desvio-padrão elevado, indicando ampla heterogeneidade entre os consórcios. Em 2023, a média situa-se em torno de R$ 81,00, enquanto em 2020 a média é substancialmente inferior.
 
-
-::: {#quad- layout-align="center" quad-pos="H"}
-```{=latex}
-
+Os valores mínimos são próximos de zero, enquanto os valores máximos superam amplamente a média, caracterizando forte assimetria à direita. Esse comportamento sugere a existência de consórcios com capacidade arrecadatória significativamente superior à maioria, configurando potenciais outliers positivos.
 
 
-```
+### Indicadores de gasto operacional e cobertura de despesas
 
-Medidas resumo da 
-:::
-
+Os indicadores relacionados à participação dos gastos operacionais e à cobertura de despesas apresentam médias elevadas ao longo do período, situando-se em geral entre 0,90 e 0,95, com dispersão relativamente reduzida. Tal padrão indica que a maior parte da receita dos consórcios é destinada à manutenção de suas atividades operacionais.
 
 
-::: {#tbl-modalidades layout-align="center" tbl-pos="H"}
-```{=latex}
+### Recursos para cobertura de queda de receita
+
+O indicador referente à capacidade de cobertura frente à queda de receitas apresenta médias próximas de zero e elevada variabilidade, além da presença de valores negativos em diversos casos. Esses resultados indicam que parte dos consórcios apresenta fragilidade financeira diante de choques de arrecadação, configurando observações extremas relevantes para análises posteriores.
 
 
-```
+### Endividamento e comprometimento das receitas
+
+As variáveis associadas ao endividamento per capita e ao comprometimento das receitas com obrigações apresentam, em média, valores reduzidos, com grande concentração em torno de zero. No entanto, observa-se a existência de poucos consórcios com valores significativamente superiores à média, caracterizando outliers que podem exercer influência relevante em modelos explicativos da eficiência financeira.
 
 
-:::
+### Considerações gerais
 
-
-
-
-$\ref{fig-}$
-
-[@tbl-]
-
-
-[**Quadro** @quad-]
-
+A análise descritiva evidencia elevada heterogeneidade entre os consórcios públicos, tanto em termos de arrecadação quanto de estrutura financeira. A presença de assimetria e valores extremos reforça a necessidade de inspeção prévia dos dados e eventual tratamento de outliers antes da aplicação de modelos econométricos ou de fronteira de eficiência. Esses resultados justificam a investigação dos fatores determinantes da eficiência financeira, objetivo central das análises subsequentes.
 
 
 
