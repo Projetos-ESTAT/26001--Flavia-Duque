@@ -6,7 +6,7 @@ library(tidyr)
 library(ggplot2)
 
 # Ler apenas a aba "Indicadores"
-dados_raw <- read_excel("C:/Users/david/Downloads/EficinciaFinanceira-Dadosfinais.xlsx", sheet = "Indicadores")
+dados_raw <- read_excel("C:/Users/david/Downloads/Eficiência Financeira - Dados finais.xlsx", sheet = "Indicadores")
 
 # Remover a primeira linha (nomes dos indicadores)
 dados <- dados_raw[-1, ]
@@ -31,4 +31,3 @@ descr <- valores %>%
                    )))
 
 descr
-
