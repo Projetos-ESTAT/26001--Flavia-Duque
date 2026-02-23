@@ -14,6 +14,151 @@ source("rdocs/source/packages.R")
 
 # Referencial Teórico
 
+# Análise Descritiva Univariada
+
+## Frequência Relativa
+
+A frequência relativa é utilizada para a comparação entre classes de uma variável categórica com $c$ categorias, ou para comparar uma mesma categoria em diferentes estudos.
+
+A frequência relativa da categoria $j$ é dada por:
+
+$$
+f_j=\frac{n_j}{n}
+$$
+
+Com:
+
+-   $j = 1, \, ..., \, c$
+
+-   $n_j =$ número de observações da categoria $j$
+
+-   $n =$ número total de observações
+
+Geralmente, a frequência relativa é utilizada em porcentagem, dada por:
+
+$$100 \times f_j$$
+
+## Média
+
+A média é a soma das observações dividida pelo número total delas, dada pela fórmula:
+
+$$\bar{X}=\frac{\sum\limits_{i=1}^{n}X_i}{n}$$
+
+Com:
+
+-   $i = 1, \, 2, \, ..., \, n$
+
+-   $n =$ número total de observações
+
+## Mediana
+
+Sejam as $n$ observações de um conjunto de dados $X=X_{(1)},X_{(2)},\ldots, X_{(n)}$ de determinada variável ordenadas de forma crescente. A mediana do conjunto de dados $X$ é o valor que deixa metade das observações abaixo dela e metade dos dados acima.
+
+Com isso, pode-se calcular a mediana da seguinte forma:
+
+$$
+med(X) =
+    \begin{cases}
+         X_{\frac{n+1}{2}}, \textrm{para n ímpar} \\
+         \frac{X_{\frac{n}{2}}+X_{\frac{n}{2} + 1}}{2}, \textrm{para n par} \\
+    \end{cases}
+$$
+
+## Quartis
+
+Os quartis são separatrizes que dividem o conjunto de dados em quatro partes iguais. O primeiro quartil (ou inferior) delimita os 25% menores valores, o segundo representa a mediana, e o terceiro delimita os 25% maiores valores. Inicialmente deve-se calcular a posição do quartil:
+
+-   Posição do primeiro quartil $P_1$: $$P_1=\frac{n+1}{4}$$
+
+-   Posição da mediana (segundo quartil) $P_2$: $$P_2 = \frac{n+1}{2}$$
+
+-   Posição do terceiro quartil $P_3$: $$P_3=\frac{3 \times (n+1)}{4}$$
+
+Com $n$ sendo o tamanho da amostra. Dessa forma, $X_{\left( P_i \right)}$ é o valor do $i$-ésimo quartil, onde $X_{\left( j \right)}$ representa a $j$-ésima observação dos dados ordenados.
+
+Se o cálculo da posição resultar em uma fração, deve-se fazer a média entre o valor que está na posição do inteiro anterior e do seguinte ao da posição.
+
+## Variância
+
+A variância é uma medida que avalia o quanto os dados estão dispersos em relação à média, em uma escala ao quadrado da escala dos dados.
+
+### Variância Amostral
+
+Para uma amostra, a variância é dada por:
+
+$$S^2=\frac{\sum\limits_{i=1}^{n}\left(X_i - \bar{X}\right)^2}{n-1}$$
+
+Com:
+
+-   $X_i =$ i-ésima observação da amostra
+
+-   $\bar{X} =$ média amostral
+
+-   $n =$ tamanho da amostra
+
+## Desvio Padrão
+
+O desvio padrão é a raiz quadrada da variância. Ele avalia o quanto os dados estão dispersos em relação à média.
+### Desvio Padrão Amostral
+
+Para uma amostra, o desvio padrão é dado por:
+
+$$S=\sqrt{\frac{\sum\limits_{i=1}^{n}\left(X_i - \bar{X}\right)^2}{n-1}}$$
+
+Com:
+
+-   $X_i =$ i-ésima observação da amostra
+
+-   $\bar{X} =$ média amostral
+
+-   $n =$ tamanho da amostra
+
+## Boxplot
+
+O boxplot é uma representação gráfica na qual se pode perceber de forma mais clara como os dados estão distribuídos. A figura abaixo ilustra um exemplo de boxplot.
+
+![Exemplo de boxplot](images/box_uni.png){fig-align="center"}
+
+A porção inferior do retângulo diz respeito ao primeiro quartil, enquanto a superior indica o terceiro quartil. Já o traço no interior do retângulo representa a mediana do conjunto de dados, ou seja, o valor em que o conjunto de dados é dividido em dois subconjuntos de mesmo tamanho. A média é representada pelo losango branco e os pontos são *outliers*. Os *outliers* são valores discrepantes da série de dados, ou seja, valores que não demonstram a realidade de um conjunto de dados.
+
+
+## Tipos de Variáveis
+
+### Qualitativas
+
+As variáveis qualitativas são as variáveis não numéricas, que representam categorias ou características da população. Estas subdividem-se em:
+
+-   **Nominais**: quando não existe uma ordem entre as categorias da variável (exemplos: sexo, cor dos olhos, fumante ou não, etc)
+-   **Ordinais**: quando existe uma ordem entre as categorias da variável (exemplos: nível de escolaridade, mês, estágio de doença, etc)
+
+### Quantitativas
+
+As variáveis quantitativas são as variáveis numéricas, que representam características numéricas da população, ou seja, quantidades. Estas subdividem-se em:
+
+-   **Discretas**: quando os possíveis valores são enumeráveis (exemplos: número de filhos, número de cigarros fumados, etc)
+-   **Contínuas**: quando os possíveis valores são resultado de medições (exemplos: massa, altura, tempo, etc)
+
+
+## Bootstrap
+
+É uma técnica de reamostragem que permite aproximar a distribuição de uma função das observações pela distribuição empírica dos dados, baseada em uma amostra finita. A amostragem é feita com reposição da distribuição da qual os dados são obtidos (nesse caso, tem-se o *bootstrap* paramétrico) ou da amostra original (*bootstrap* não-paramétrico).
+
+A técnica *bootstrap* tenta realizar o que seria desejável na prática, se tal fosse possível: **repetir o experimento**. A ideia básica da técnica é: uma vez que não se dispõe de toda população de amostras (observações), faça-se o melhor com o que se dispõe, que é o conjunto de amostras $X = \{x_1, \, x_2, \, \ldots, \, x_n\}$. O procedimento para obtenção de amostras *bootstrap* está descrito a seguir:
+
+Seja uma amostra original $X = \{x_1, \, x_2, \, \ldots, \, x_n\}$ e a estatística de interesse $\hat{\theta} = F(X)$.
+
+1.  Geram-se amostras *bootstrap* $X(1), X(2), \ldots, X(B)$, com reposição de $X$.
+2.  Calculam-se as estimativas da estatística de interesse: $\hat{\theta}(b) = F(X_b)$, $b = 1, \, 2, \, \ldots, \, B$.
+3.  Calcula-se o erro padrão *Bootstrap*, $\hat{S}_{Boot}$ como: $$\hat{S}_{Boot} = \sqrt{\sum_{b=1}^{B}\frac{(\hat{\theta}(b)-\hat{\theta}(.*))^2}{B-1}},$$ onde $\hat{\theta}(.*) = \sum_{b=1}^{B}\frac{\hat{\theta}(b)}{B}$.
+
+
+#### Referências Bibliográficas
+
+-   NETER, J., KUTNER, M., NACHTSHEIM, C. J. e WASSERMAN, W. Applied linear statistical models. 5a edição. Illinois: Irwin, 2013.
+-   CHARNET, R.; FREIRE, C. A. L.; CHARNET, E. M. R. ; BONVINO, H. Análise de modelos de regressão linear com aplicações. 2a edição, Campinas: Editora UNICAMP, 2008.
+-   BUSSAB, W. e MORETTIN, P., Estatística Básica, 9a edição. Ed. Saraiva, SP, 2010.
+
+
 # Análises
 
 # Conclusões
