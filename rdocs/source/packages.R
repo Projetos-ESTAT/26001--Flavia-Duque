@@ -82,14 +82,14 @@ print_quadro_resumo <- function(data, var_name, title="Medidas resumo da(o) [nom
 {
   var_name <- substitute(var_name)
   data <- data %>%
-    summarize(`Média` = round(mean(!!sym(var_name)),2),
-              `Desvio Padrão` = round(sd(!!sym(var_name)),2),
-              `Variância` = round(var(!!sym(var_name)),2),
-              `Mínimo` = round(min(!!sym(var_name)),2),
-              `1º Quartil` = round(quantile(!!sym(var_name), probs = .25),2),
-              `Mediana` = round(quantile(!!sym(var_name), probs = .5),2),
-              `3º Quartil` = round(quantile(!!sym(var_name), probs = .75),2),
-              `Máximo` = round(max(!!sym(var_name)),2)) %>%
+    summarize(`Média` = round(mean(!!sym(var_name), na.rm = TRUE),2),
+              `Desvio Padrão` = round(sd(!!sym(var_name), na.rm = TRUE),2),
+              `Variância` = round(var(!!sym(var_name), na.rm = TRUE),2),
+              `Mínimo` = round(min(!!sym(var_name), na.rm = TRUE),2),
+              `1º Quartil` = round(quantile(!!sym(var_name), na.rm = TRUE, probs = .25),2),
+              `Mediana` = round(quantile(!!sym(var_name), na.rm = TRUE, probs = .5),2),
+              `3º Quartil` = round(quantile(!!sym(var_name), na.rm = TRUE, probs = .75),2),
+              `Máximo` = round(max(!!sym(var_name), na.rm = TRUE),2)) %>%
     t() %>% 
     as.data.frame() %>%
     rownames_to_column()
