@@ -21,22 +21,23 @@ Variável quantitativa contínua que indica a receita *per capita*.
 ```{=latex}
 
 	\begin{tabular} { | l |
+			S[table-format = 4.2]
 			S[table-format = 5.2]
 			S[table-format = 5.2]
-			S[table-format = 5.2]
-			S[table-format = NaN.2]
+			S[table-format = 4.2]
+			S[table-format = 3.2]
 			|}
 	\hline
-		\textbf{Estatística} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} \\
+		\textbf{Estatística} & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} \\
 		\hline
-		Média & 16,72 & 14,27 & 0,43 & 0,49 \\
-		Desvio Padrão & 178,2 & 149,77 & 2,09 & 2,16 \\
-		Variância & 31756,07 & 22431,71 & 4,38 & 4,68 \\
-		Mínimo & -0,01 & -0,01 & 0 & 0 \\
-		1º Quartil & 0 & 0 & 0 & 0 \\
-		Mediana & 0 & 0 & 0 & 0 \\
-		3º Quartil & 0 & 0 & 0 & 0 \\
-		Máximo & 1944,22 & 1627,23 & 16,69 & 16,08 \\
+		Média & 42.11 & 71.77 & 85.65 & 81.66 & 97.37 \\
+		Desvio Padrão & 48.34 & 199.88 & 231.64 & 81.71 & 99.16 \\
+		Variância & 2336.45 & 39953.34 & 53658.14 & 6676.99 & 9831.92 \\
+		Mínimo & 0 & 0 & 0.06 & 0.01 & 0 \\
+		1º Quartil & 9.02 & 8.24 & 11.53 & 16.53 & 19.41 \\
+		Mediana & 23.35 & 29.08 & 40.9 & 50.78 & 57.61 \\
+		3º Quartil & 65.68 & 82.7 & 102.22 & 136.3 & 150.58 \\
+		Máximo & 283.78 & 1895.13 & 2203.4 & 355.51 & 412.48 \\
 	\hline
 	\end{tabular}
 
@@ -53,9 +54,15 @@ Medidas resumo das Receitas *per Capita*
 box18
 ```
 
+<<<<<<< HEAD
 A análise da receita *per capita* ([**Quadro** @quad-quadro12] e $\ref{fig-box18}$) revela uma mudança drástica no perfil financeiro das localidades a partir de 2023. Nos anos de 2021 e 2022, os dados apresentavam médias elevadas (16,72 e 14,27, respectivamente) e uma variabilidade extrema, com desvios padrão que ultrapassavam a marca de 140,00. Entretanto, a partir de 2023, houve uma redução severa tanto nos valores médios (caindo para 0,43) quanto na dispersão dos dados. Essa queda abrupta sugere uma alteração estrutural na arrecadação ou na forma de contabilização das receitas, resultando em uma distribuição muito mais compacta e de valores baixos no último biênio.
 
 O boxplot na $\ref{fig-box18}$ evidencia que a série histórica é marcada por outliers de altíssima magnitude no primeiro biênio, com valores máximos atingindo 1.944,22 em 2021 e 1.627,23 em 2022. Esses pontos atípicos distorcem significativamente a média, já que a mediana em todos os anos analisados é 0,00, indicando que a grande maioria das observações não registra receita per capita expressiva. No biênio final (2023-2024), os valores máximos caíram para o patamar de 16,00, eliminando os picos extremos vistos anteriormente e consolidando um cenário de receitas *per capita* residuais para a quase totalidade da amostra.
+=======
+A análise da receita per capita ([**Quadro** @quad-quadro12] e $\ref{fig-box18}$) indica uma tendência de crescimento progressivo nos valores centrais ao longo do período, embora acompanhada por uma volatilidade extrema no biênio intermediário. A média, que iniciou em 42,11 em 2020, apresentou uma trajetória ascendente até atingir 97,37 em 2024. No entanto, o desvio padrão revela uma dispersão severa nos anos de 2021 e 2022, com valores de 199,88 e 231,64, respectivamente. Essa variabilidade acentuada demonstra que, nesses anos específicos, o comportamento da receita foi altamente heterogêneo entre as localidades, cenário que se estabilizou a partir de 2023, quando o desvio padrão retornou a patamares abaixo de 100,00.
+
+O boxplot na $\ref{fig-box18}$ evidencia que a série histórica é fortemente influenciada por outliers de magnitude excepcional em 2021 e 2022, com valores máximos atingindo 1.895,13 e 2.203,40. Esses pontos atípicos exercem uma pressão positiva sobre a média, mantendo-a sistematicamente acima da mediana em todos os anos analisados — em 2022, por exemplo, a média (85,65) é mais que o dobro da mediana (40,90). No biênio final (2023-2024), observa-se um "achatamento" desses picos extremos, com os valores máximos recuando para a casa dos 400,00. Esse movimento, somado à elevação constante da mediana (que saltou de 23,35 em 2020 para 57,61 em 2024), sugere uma consolidação de receitas em níveis mais elevados para a base da amostra, com menos distorções causadas por valores discrepantes.
+>>>>>>> 236600d81f7a6d99e5f9640f5d339380543dab9d
 
 #### Participação dos gastos operacionais
 Varável quantitativa contínua que aponta a participação dos consórcios nos gastos operacionais 
@@ -64,22 +71,23 @@ Varável quantitativa contínua que aponta a participação dos consórcios nos 
 ```{=latex}
 
 	\begin{tabular} { | l |
-			S[table-format = -1.2]
+			S[table-format = 0.2]
 			S[table-format = 0.2]
 			S[table-format = -1.2]
-			S[table-format = -Inf.2]
+			S[table-format = 0.2]
+			S[table-format = 0.2]
 			|}
 	\hline
-		\textbf{Estatística} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} \\
+		\textbf{Estatística} & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} \\
 		\hline
-		Média & 0,03 & 0,03 & 0,01 & 0,01 \\
-		Desvio Padrão & 0,13 & 0,1 & 0,04 & 0,04 \\
-		Variância & 0,02 & 0,01 & 0 & 0 \\
-		Mínimo & 0 & 0 & 0 & 0 \\
-		1º Quartil & 0 & 0 & 0 & 0 \\
-		Mediana & 0 & 0 & 0 & 0 \\
-		3º Quartil & 0 & 0 & 0 & 0 \\
-		Máximo & 1,06 & 0,75 & 0,26 & 0,28 \\
+		Média & 0.96 & 0.97 & 0.89 & 0.9 & 0.94 \\
+		Desvio Padrão & 0.13 & 0.08 & 0.21 & 0.2 & 0.12 \\
+		Variância & 0.02 & 0.01 & 0.04 & 0.04 & 0.02 \\
+		Mínimo & 0.03 & 0.52 & 0.14 & 0.05 & 0.17 \\
+		1º Quartil & 0.98 & 0.98 & 0.94 & 0.94 & 0.94 \\
+		Mediana & 1 & 0.99 & 0.99 & 0.99 & 0.99 \\
+		3º Quartil & 1 & 1 & 1 & 1 & 1 \\
+		Máximo & 1 & 1.34 & 1 & 1 & 1 \\
 	\hline
 	\end{tabular}
 
@@ -96,9 +104,9 @@ Medidas resumo da Participação dos Gastos Operacionais
 box17
 ```
 
-A participação dos gastos operacionais ([**Quadro** @quad-quadro13] e $\ref{fig-box17}$) apresenta um comportamento de acentuada estabilidade e concentração em patamares baixos ao longo do período analisado. Tanto a média (que variou de 0,03 para 0,01) quanto a mediana (0,00 em todos os anos) indicam que, para a grande maioria dos consórcios, o impacto desses gastos no orçamento é residual. O desvio padrão também sofreu uma redução expressiva, caindo de 0,13 em 2021 para 0,04 em 2024, o que reflete uma convergência dos dados e uma diminuição da volatilidade financeira em torno deste indicador nos anos mais recentes.
+A participação dos gastos operacionais ([**Quadro** @quad-quadro13] e $\ref{fig-box17}$) revela uma forte concentração de valores no limite superior da distribuição. Durante todo o período analisado, a mediana manteve-se praticamente estável em 0,99 (atingindo 1,00 em 2020), o que indica que, para a grande maioria das observações, a participação dos consórcios nos gastos operacionais é integral ou quase integral. A média, embora elevada, oscila entre 0,89 e 0,97, sendo sistematicamente puxada para baixo pela presença de valores mínimos residuais, especialmente entre 2022 e 2023. A variabilidade, medida pelo desvio padrão, apresentou um aumento pontual no biênio 2022-2023 (atingindo 0,21), refletindo um período de maior heterogeneidade na amostra antes de retornar a patamares mais baixos em 2024 (0,12).
 
-O boxplot na $\ref{fig-box17}$ revela uma distribuição com fortíssima assimetria positiva, caracterizada por uma massa de dados concentrada no zero e a presença constante de outliers severos. Em 2021, registrou-se o pico máximo de participação de 1,06, sugerindo casos excepcionais onde os gastos operacionais igualaram ou superaram o orçamento total de referência. Embora esses valores extremos tenham diminuído para 0,28 em 2024, a existência contínua de pontos atípicos acima das hastes demonstra que um pequeno grupo de consórcios opera com uma estrutura de custos significativamente distinta da média geral, exigindo atenção específica na gestão desses recursos.
+O boxplot na $\ref{fig-box17}$ confirma esse comportamento de "teto", com o corpo da distribuição (quartis) comprimido no topo do gráfico e uma extensa série de outliers inferiores em todos os anos. Esses pontos atípicos representam casos específicos onde a participação nos gastos é significativamente menor, com valores mínimos chegando a 0,03 em 2020 e 0,05 em 2023. Um registro notável ocorre em 2021, onde o valor máximo de 1,34 se destaca como um outlier superior extremo e isolado, visto que a variável, por definição de participação, tende a se limitar a 1,00. No geral, os dados apontam para um modelo operacional onde a dependência dos consórcios é a norma absoluta, com raras exceções que fogem à regra da participação quase total.
 
 
 #### Cobertura de despesas
@@ -108,23 +116,23 @@ Variável quantitativa contínua que mostra a cobertura de despesas dos consórc
 ```{=latex}
 
 	\begin{tabular} { | l |
-			S[table-format = 4.2]
-			S[table-format = 5.2]
-			S[table-format = 5.2]
-			S[table-format = 4.2]
-			S[table-format = 4.2]
+			S[table-format = 1.2]
+			S[table-format = 0.2]
+			S[table-format = 0.2]
+			S[table-format = 0.2]
+			S[table-format = 0.2]
 			|}
 	\hline
 		\textbf{Estatística} & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} \\
 		\hline
-		Média & 28,66 & 56,09 & 67,51 & 66,02 & 75,28 \\
-		Desvio Padrão & 44,41 & 178,99 & 208,39 & 80,08 & 96,23 \\
-		Variância & 1972,65 & 32037,13 & 43428,34 & 6412,51 & 9259,34 \\
-		Mínimo & 0 & 0 & 0 & 0 & 0 \\
-		1º Quartil & 0 & 0,37 & 1,26 & 2,19 & 0,95 \\
-		Mediana & 9,56 & 16,54 & 21,25 & 27,55 & 32,79 \\
-		3º Quartil & 40,23 & 67,91 & 76,35 & 111,06 & 120,82 \\
-		Máximo & 283,78 & 1895,13 & 2203,4 & 355,51 & 412,48 \\
+		Média & 1.11 & 1.15 & 1.11 & 1.05 & 1.12 \\
+		Desvio Padrão & 0.47 & 0.73 & 0.52 & 0.31 & 0.33 \\
+		Variância & 0.22 & 0.53 & 0.27 & 0.1 & 0.11 \\
+		Mínimo & 0.41 & 0 & 0.21 & 0.18 & 0.2 \\
+		1º Quartil & 0.98 & 0.99 & 0.98 & 0.98 & 0.99 \\
+		Mediana & 1.04 & 1.02 & 1.02 & 1.01 & 1.03 \\
+		3º Quartil & 1.1 & 1.11 & 1.14 & 1.1 & 1.13 \\
+		Máximo & 4.54 & 6.9 & 5.43 & 3.02 & 2.47 \\
 	\hline
 	\end{tabular}
 
@@ -141,9 +149,9 @@ Medidas resumo das Coberturas de Despesas
 box11
 ```
 
-O índice de cobertura de despesas ([**Quadro** @quad-quadro14] e $\ref{fig-box11}$) apresenta uma trajetória de crescimento acentuado e aumento na heterogeneidade ao longo do período analisado. A média global subiu de 28,66 em 2020 para 75,28 em 2024, indicando uma ampliação na capacidade financeira média das entidades. No entanto, a disparidade entre as observações atingiu níveis críticos em 2021 e 2022, com desvios padrão extremamente elevados (178,99 e 208,39, respectivamente), sugerindo que o crescimento médio foi impulsionado por resultados excepcionais de um grupo restrito, enquanto a maioria mantinha índices mais modestos.
+O índice de cobertura de despesas ([**Quadro** @quad-quadro14] e $\ref{fig-box11}$) demonstra um cenário de estabilidade nos valores centrais, acompanhado por uma redução significativa da dispersão extrema ao longo do tempo. A média manteve-se consistentemente acima de 1,00 em todo o período, variando entre 1,05 (2023) e 1,15 (2021), o que indica que, em termos médios, as receitas são suficientes para cobrir as despesas operacionais. Contudo, a estabilidade da mediana em torno de 1,02 sugere que a maior parte da amostra opera com uma margem de cobertura muito próxima do ponto de equilíbrio, sendo a média elevada por casos excepcionais de superávit.
 
-O boxplot na $\ref{fig-box11}$ revela uma distribuição marcada por outliers de magnitude severa, especialmente no intervalo entre 2021 e 2022, onde foram registrados picos de 1.895,13 e 2.203,40. Esses valores atípicos distorcem a média para cima, já que a mediana, embora crescente, permanece em patamares muito inferiores (de 9,56 em 2020 para 32,79 em 2024). No último biênio (2023-2024), observa-se uma redução nos valores máximos e uma estabilização do desvio padrão, indicando uma distribuição menos volátil, mas que ainda preserva a característica de ter 75% da amostra com índices abaixo de 120,82, evidenciando que a alta cobertura de despesas é um fenômeno concentrado em poucos entes da amostra.
+O boxplot na $\ref{fig-box11}$ evidencia que a variabilidade total do índice foi impulsionada por outliers superiores de grande magnitude, especialmente entre 2020 e 2022. O pico de dispersão ocorreu em 2021, com um valor máximo de 6,90 e um desvio padrão de 0,73. Nos anos subsequentes, observa-se um movimento de "achatamento" desses picos: o valor máximo recuou progressivamente até atingir 2,47 em 2024, enquanto o desvio padrão estabilizou em 0,33. Essa tendência aponta para uma homogeneização da saúde financeira das localidades, com menos casos de coberturas discrepantes e uma concentração maior dos dados em torno da unidade no biênio final.
 
 #### Recursos para cobertura de queda de receita
 Variável quantitativa contínua que acusa os recursos para cobertura de queda de receita, ou seja, quando há uma diminuição na receita dos consórcios, o quanto de recursos estão disponíveis para cobrir esse acontecimento.
@@ -152,23 +160,23 @@ Variável quantitativa contínua que acusa os recursos para cobertura de queda d
 ```{=latex}
 
 	\begin{tabular} { | l |
-			S[table-format = 0.2]
-			S[table-format = 0.2]
-			S[table-format = 0.2]
-			S[table-format = 0.2]
-			S[table-format = 0.2]
+			S[table-format = 1.2]
+			S[table-format = 1.2]
+			S[table-format = 1.2]
+			S[table-format = 1.2]
+			S[table-format = 1.2]
 			|}
 	\hline
 		\textbf{Estatística} & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} \\
 		\hline
-		Média & 0,89 & 0,92 & 0,86 & 0,92 & 0,92 \\
-		Desvio Padrão & 0,3 & 0,27 & 0,31 & 0,55 & 0,47 \\
-		Variância & 0,09 & 0,08 & 0,09 & 0,3 & 0,22 \\
-		Mínimo & 0 & 0 & 0 & 0 & 0,14 \\
-		1º Quartil & 0,87 & 0,9 & 0,73 & 0,81 & 0,77 \\
-		Mediana & 0,94 & 0,96 & 0,95 & 0,96 & 0,96 \\
-		3º Quartil & 0,99 & 0,99 & 1 & 1 & 1 \\
-		Máximo & 2,26 & 2,59 & 2,62 & 5,48 & 4,89 \\
+		Média & 0.05 & 0.05 & 0 & -0.03 & 0.03 \\
+		Desvio Padrão & 0.31 & 0.27 & 0.49 & 0.52 & 0.45 \\
+		Variância & 0.1 & 0.07 & 0.24 & 0.27 & 0.2 \\
+		Mínimo & -1.47 & -1.59 & -3.75 & -4.57 & -3.89 \\
+		1º Quartil & -0.01 & -0.01 & -0.02 & -0.02 & -0.02 \\
+		Mediana & 0.04 & 0.02 & 0.02 & 0.01 & 0.02 \\
+		3º Quartil & 0.1 & 0.1 & 0.12 & 0.09 & 0.12 \\
+		Máximo & 1 & 1 & 1 & 0.67 & 0.59 \\
 	\hline
 	\end{tabular}
 
@@ -185,9 +193,54 @@ Medidas resumo dos recursos para cobertura de queda de receita
 box12
 ```
 
-O indicador de recursos para cobertura de queda de receita ([**Quadro** @quad-quadro15] e $\ref{fig-box12}$) apresenta um comportamento de alta estabilidade e resiliência ao longo do período analisado. A média manteve-se consistentemente elevada, orbitando o patamar de 0,90, enquanto a mediana permaneceu ainda mais alta e estável, fixada em aproximadamente 0,95. Essa configuração indica que a vasta maioria dos consórcios possui uma sólida capacidade de cobertura para eventuais frustrações de receita, mantendo índices próximos à totalidade. A partir de 2023, observa-se um leve aumento na dispersão dos dados, com o desvio padrão subindo de 0,31 (2022) para 0,55 (2023), sugerindo uma maior heterogeneidade nas reservas financeiras das entidades no biênio final.
+O indicador de recursos para cobertura de queda de receita ([**Quadro** @quad-quadro15] e $\ref{fig-box12}$) revela um cenário de extrema fragilidade e neutralidade para a maior parte das localidades, acompanhado por um agravamento da dispersão negativa ao longo do período. A mediana manteve-se próxima de zero em todos os anos, variando entre 0,01 (2023) e 0,04 (2020), o que indica que a vasta maioria da amostra possui recursos quase inexistentes para mitigar perdas de arrecadação. A média, que já era baixa no primeiro biênio (0,05), apresentou uma deterioração significativa a partir de 2022, chegando a registrar um valor negativo em 2023 (-0,03), refletindo o peso dos valores extremos inferiores no cálculo global.
 
-O boxplot na $\ref{fig-box12}$ reforça essa robustez, mostrando que 75% da amostra (3º quartil) atinge a cobertura total (1,00) em quase todos os anos. Entretanto, a análise revela a presença constante de outliers extremos superiores e inferiores, o que evidencia situações fiscais muito distintas nas pontas da distribuição. No limite inferior, existem casos com zero recursos disponíveis, enquanto no limite superior, foram registrados picos de até 5,48 em 2023 e 4,89 em 2024. Esses valores atípicos elevados indicam que, embora o padrão geral seja de segurança, alguns entes possuem reservas excepcionais que superam em várias vezes a necessidade de cobertura, contrastando com aqueles em situação de vulnerabilidade total.
+O boxplot na $\ref{fig-box12}$ evidencia que a variabilidade dos dados é impulsionada principalmente por outliers inferiores de magnitude crescente. Enquanto em 2020 o valor mínimo era de -1,47, esse patamar de déficit potencial de recursos aprofundou-se drasticamente no biênio final, atingindo o pico de -4,57 em 2023. Simultaneamente, observa-se uma redução no "teto" de recursos disponíveis: o valor máximo, que se manteve na unidade (1,00) entre 2020 e 2022, recuou para 0,67 e 0,59 nos anos subsequentes. Esse movimento combinado — aumento dos outliers negativos e redução dos picos positivos — sugere um cenário de maior vulnerabilidade financeira nas localidades no encerramento da série histórica.
+
+
+#### Despesas com pessoal/Despesa total
+Variável quantitativa contínua referente à proporção das despesas com pessoal em relação à despesa total.
+
+::: {#quad-quadro20 layout-align="center" quad-pos="H"}
+```{=latex}
+
+	\begin{tabular} { | l |
+			S[table-format = 1.2]
+			S[table-format = 1.2]
+			S[table-format = 1.2]
+			S[table-format = 1.2]
+			S[table-format = 1.2]
+			|}
+	\hline
+		\textbf{Estatística} & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} \\
+		\hline
+		Média & 0.31 & 0.3 & 0.29 & 0.26 & 0.27 \\
+		Desvio Padrão & 0.28 & 0.27 & 0.26 & 0.25 & 0.26 \\
+		Variância & 0.08 & 0.07 & 0.07 & 0.06 & 0.07 \\
+		Mínimo & 0 & 0 & 0 & 0 & 0.01 \\
+		1º Quartil & 0.07 & 0.07 & 0.08 & 0.06 & 0.06 \\
+		Mediana & 0.18 & 0.19 & 0.17 & 0.15 & 0.15 \\
+		3º Quartil & 0.55 & 0.56 & 0.52 & 0.44 & 0.47 \\
+		Máximo & 1 & 0.85 & 1.3 & 0.84 & 0.99 \\
+	\hline
+	\end{tabular}
+
+
+```
+
+Medidas resumo das despesas com pessoal/despesa total
+:::
+
+```{r}
+#| label: fig-box19
+#| fig-cap: "Boxplot das despesas com pessoal/despesa total"
+
+box19
+```
+
+A análise da proporção das despesas com pessoal em relação à despesa total ([**Quadro** @quad-quadro20] e $\ref{fig-box19}$) indica uma tendência de leve redução e estabilização desses custos ao longo da série histórica. A média, que iniciou o período em 0,31 (2020), apresentou uma queda gradual até atingir o patamar de 0,26 em 2023, com uma ligeira variação para 0,27 em 2024. Esse movimento é acompanhado pela mediana, que recuou de 0,18 em 2020 para 0,15 no último biênio, sugerindo que a maior parte das localidades conseguiu manter ou reduzir o peso das despesas com pessoal no orçamento total ao final do período analisado.
+
+O boxplot na $\ref{fig-box19}$ revela uma distribuição com assimetria à direita, evidenciada pelas médias sistematicamente superiores às medianas, o que indica a existência de localidades com gastos com pessoal significativamente acima da tendência central da amostra. O ano de 2022 destaca-se por apresentar o maior valor extremo da série, atingindo um máximo de 1,30, o que configura um outlier de alta magnitude. No biênio final (2023-2024), observa-se uma maior compressão do corpo da distribuição, com o 3º quartil situando-se abaixo de 0,50 (0,44 em 2023 e 0,47 em 2024), consolidando um cenário onde pelo menos 75% da amostra compromete menos da metade do seu orçamento total com despesas de pessoal.
 
 #### Recursos para cobertura de obrigações correntes
 Variável quantitativa contínua referente aos recursos disponíveis para cobrir obrigações correntes.
@@ -196,23 +249,23 @@ Variável quantitativa contínua referente aos recursos disponíveis para cobrir
 ```{=latex}
 
 	\begin{tabular} { | l |
-			S[table-format = 0.2]
-			S[table-format = 0.2]
-			S[table-format = -1.2]
-			S[table-format = 0.2]
+			S[table-format = NaN.2]
+			S[table-format = 2.2]
+			S[table-format = 3.2]
+			S[table-format = NaN.2]
 			S[table-format = 0.2]
 			|}
 	\hline
 		\textbf{Estatística} & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} \\
 		\hline
-		Média & 0,95 & 0,97 & 0,89 & 0,9 & 0,94 \\
-		Desvio Padrão & 0,17 & 0,08 & 0,21 & 0,2 & 0,12 \\
-		Variância & 0,03 & 0,01 & 0,04 & 0,04 & 0,02 \\
-		Mínimo & 0 & 0,52 & 0,14 & 0,05 & 0,17 \\
-		1º Quartil & 0,98 & 0,98 & 0,94 & 0,94 & 0,94 \\
-		Mediana & 1 & 0,99 & 0,99 & 0,99 & 0,99 \\
-		3º Quartil & 1 & 1 & 1 & 1 & 1 \\
-		Máximo & 1 & 1,34 & 1 & 1 & 1 \\
+		Média & 0.73 & 0.75 & -1.78 & 0.72 & 0.82 \\
+		Desvio Padrão & 0.31 & 0.3 & 24.54 & 0.46 & 0.29 \\
+		Variância & 0.1 & 0.09 & 602.45 & 0.22 & 0.08 \\
+		Mínimo & 0 & -0.24 & -237.2 & -2.91 & 0 \\
+		1º Quartil & 0.6 & 0.62 & 0.6 & 0.62 & 0.74 \\
+		Mediana & 0.85 & 0.86 & 0.87 & 0.86 & 0.93 \\
+		3º Quartil & 0.97 & 0.99 & 0.98 & 0.97 & 0.99 \\
+		Máximo & 1.45 & 1.02 & 1.03 & 1 & 1.95 \\
 	\hline
 	\end{tabular}
 
@@ -229,9 +282,9 @@ Medidas resumo dos recursos para cobertura de obrigações correntes
 box13
 ```
 
-O indicador de recursos para cobertura de obrigações correntes ([**Quadro** @quad-quadro16] e $\ref{fig-box13}$) demonstra um cenário de altíssima estabilidade e segurança financeira ao longo de todo o período. A média e a mediana mantêm-se extremamente próximas da unidade (0,94 e 0,99 em 2024, respectivamente), indicando que a grande maioria das entidades possui recursos suficientes para honrar seus compromissos imediatos. O baixo desvio padrão, que atingiu seu menor nível em 2024 (0,12), confirma que os dados estão fortemente concentrados em patamares elevados, refletindo uma gestão de caixa consistente na maior parte da amostra.
+O indicador de recursos para cobertura de obrigações correntes ([**Quadro** @quad-quadro16] e $\ref{fig-box13}$) revela um comportamento predominantemente estável e positivo na maior parte da série, interrompido por uma distorção severa em 2022. A mediana manteve-se em patamares sólidos e crescentes, variando de 0,85 em 2020 para 0,93 em 2024, o que indica que a maioria das localidades possui uma boa capacidade de cobertura de seus compromissos imediatos. No entanto, o ano de 2022 apresenta uma queda drástica na média para -1,78, acompanhada por um desvio padrão atípico de 24,54, evidenciando uma instabilidade pontual extrema na amostra.
 
-O boxplot na $\ref{fig-box13}$ evidencia essa concentração: a "caixa" do gráfico é extremamente achatada no topo, com o 1º quartil, a mediana e o 3º quartil muitas vezes sobrepostos ou muito próximos de 1,00. Entretanto, a análise identifica a presença constante de outliers inferiores, que representam entidades em situações críticas de liquidez, com índices que chegam a 0,00 em alguns anos ou 0,17 em 2024. Apesar desses casos isolados de vulnerabilidade, o perfil geral é de robustez, com raras exceções de valores acima do total necessário, como o pico de 1,34 registrado em 2021.
+O boxplot na $\ref{fig-box13}$ destaca que essa anomalia estatística em 2022 é fruto de um outlier inferior de magnitude catastrófica, com o valor mínimo atingindo -237,20. Esse ponto isolado distorce significativamente os indicadores de dispersão, enquanto o corpo da distribuição (quartis) permanece concentrado próximo à unidade. Nos demais anos, a dispersão é muito menor, com valores máximos chegando a 1,95 em 2024. A recuperação observada no biênio final (2023-2024) sugere que os casos de insolvência extrema foram pontuais, com a amostra retornando a um perfil de cobertura robusto, onde 75% das observações apresentam índices acima de 0,62.
 
 #### Comprometimento das receitas com as obrigações correntes
 Variável quantitativa contínua que mostra o nível de comprometimento das receitas com as obrigações correntes.
@@ -240,23 +293,23 @@ Variável quantitativa contínua que mostra o nível de comprometimento das rece
 ```{=latex}
 
 	\begin{tabular} { | l |
-			S[table-format = NaN.2]
 			S[table-format = 0.2]
 			S[table-format = 0.2]
+			S[table-format = 0.2]
 			S[table-format = NaN.2]
-			S[table-format = NaN.2]
+			S[table-format = -1.2]
 			|}
 	\hline
 		\textbf{Estatística} & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} \\
 		\hline
-		Média & 0,04 & 0,05 & 0 & -0,02 & 0,07 \\
-		Desvio Padrão & 0,29 & 0,27 & 0,49 & 0,51 & 0,17 \\
-		Variância & 0,09 & 0,07 & 0,24 & 0,26 & 0,03 \\
-		Mínimo & -1,47 & -1,59 & -3,75 & -4,57 & -0,42 \\
-		1º Quartil & -0,01 & -0,01 & -0,02 & -0,02 & -0,02 \\
-		Mediana & 0,04 & 0,02 & 0,02 & 0,01 & 0,02 \\
-		3º Quartil & 0,1 & 0,1 & 0,12 & 0,09 & 0,12 \\
-		Máximo & 1 & 1 & 1 & 0,67 & 0,59 \\
+		Média & 0.11 & 0.07 & 0.06 & 0.07 & 0.06 \\
+		Desvio Padrão & 0.38 & 0.14 & 0.09 & 0.16 & 0.18 \\
+		Variância & 0.15 & 0.02 & 0.01 & 0.02 & 0.03 \\
+		Mínimo & -0.02 & -0.03 & -0.02 & 0 & -0.05 \\
+		1º Quartil & 0 & 0 & 0 & 0.01 & 0 \\
+		Mediana & 0.02 & 0.02 & 0.02 & 0.02 & 0.02 \\
+		3º Quartil & 0.09 & 0.08 & 0.08 & 0.07 & 0.06 \\
+		Máximo & 3.26 & 0.89 & 0.51 & 1.32 & 1.67 \\
 	\hline
 	\end{tabular}
 
@@ -273,97 +326,10 @@ Medidas resumo do comprometimento das receitas com as obrigações correntes
 box14
 ```
 
-O indicador de comprometimento das receitas com as obrigações correntes ([**Quadro** @quad-quadro17] e $\ref{fig-box14}$) apresenta uma distribuição marcada por uma fortíssima concentração em torno de zero, indicando que, para a maioria dos entes, as obrigações correntes consomem uma parcela mínima ou nula da receita disponível. A média flutuou de forma atípica, chegando a valores negativos em 2023 (-0,02) e atingindo seu pico em 2024 (0,07). Essa volatilidade, acompanhada por desvios padrão elevados (como o de 0,51 em 2023), revela que a massa central de dados é estável, mas o comportamento geral é severamente impactado por valores extremos em ambas as direções.
+O indicador de comprometimento das receitas com as obrigações correntes ([**Quadro** @quad-quadro17] e $\ref{fig-box14}$) revela um cenário de baixo impacto orçamentário para a maioria das localidades, com uma tendência de estabilidade nos valores centrais ao longo de todo o período. A mediana manteve-se constante em 0,02 durante os cinco anos analisados, indicando que, para 50% da amostra, apenas 2% das receitas estão comprometidas com obrigações correntes. A média, embora ligeiramente superior à mediana devido a valores atípicos, apresentou uma trajetória de queda de 0,11 (2020) para 0,06 (2024), sugerindo uma melhora marginal na saúde financeira geral.
 
-O boxplot na $\ref{fig-box14}$ evidencia uma configuração de "caixas achatadas", onde a mediana permanece próxima a zero durante todo o período, sugerindo uma situação fiscal equilibrada para a maior parte da amostra. Entretanto, a análise destaca a presença de outliers agressivos, especialmente no limite inferior, com valores atingindo -4,57 em 2023. Esses valores negativos sugerem distorções contábeis ou ajustes extraordinários que fogem à normalidade operacional. No limite superior, o comprometimento máximo chegou a 1,00 (100%), indicando casos isolados de estresse financeiro total, onde toda a receita é absorvida pelas obrigações correntes.
+O boxplot na $\ref{fig-box14}$ evidencia que a distribuição é marcada por outliers superiores recorrentes, que distorcem as medidas de dispersão em anos específicos. O ano de 2020 destaca-se com o maior pico de comprometimento da série, registrando um valor máximo de 3,26 e o maior desvio padrão (0,38). No biênio final (2023-2024), nota-se um novo surgimento de valores discrepantes que elevaram o máximo de 0,51 (em 2022) para 1,67 (em 2024), além de um aumento no desvio padrão para 0,18. Apesar desses pontos fora da curva, o 3º quartil manteve-se abaixo de 0,10 em todos os anos, confirmando que a grande maioria das localidades mantém um nível de comprometimento de receita considerado seguro e controlado.
 
-#### Dívida per capita
-Variável quantitativa contínua da dívida per capita dos consórcios.
-
-::: {#quad-quadro18 layout-align="center" quad-pos="H"}
-```{=latex}
-
-	\begin{tabular} { | l |
-			S[table-format = 9.2]
-			S[table-format = 7.2]
-			S[table-format = 5.2]
-			S[table-format = 6.2]
-			S[table-format = 7.2]
-			|}
-	\hline
-		\textbf{Estatística} & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} \\
-		\hline
-		Média & 1477,85 & 388,69 & 53,9 & 92,44 & 184,14 \\
-		Desvio Padrão & 12472,96 & 2246,59 & 132,92 & 422,66 & 2421,44 \\
-		Variância & 155574855 & 5047153 & 17667,34 & 178642,8 & 5863351 \\
-		Mínimo & -3,23 & -52,59 & -33,17 & -0,74 & -13509,07 \\
-		1º Quartil & 1,12 & 1,26 & 1,19 & 1,57 & 1,48 \\
-		Mediana & 4,23 & 3,74 & 5,18 & 5,26 & 9,91 \\
-		3º Quartil & 14,06 & 16,17 & 27,72 & 19,78 & 44,34 \\
-		Máximo & 108770,3 & 17260,88 & 776,82 & 3406,53 & 17178,46 \\
-	\hline
-	\end{tabular}
-
-
-```
-
-Medidas resumo das dívidas per capita
-:::
-
-```{r}
-#| label: fig-box15
-#| fig-cap: "Boxplot das dívidas per capita"
-
-box15
-```
-
-O indicador de dívida per capita ([**Quadro** @quad-quadro18] e $\ref{fig-box15}$) é marcado por uma volatilidade extrema e uma distribuição severamente desigual, com valores que variam drasticamente entre os anos. Em 2020, a média atingiu seu patamar mais elevado (1.477,85), impulsionada por um desvio padrão colossal de 12.472,96. Nos anos subsequentes, embora a média tenha sofrido uma redução nominal significativa (chegando a 184,14 em 2024), a variabilidade continuou altíssima. A mediana, por outro lado, permaneceu em níveis baixíssimos em todo o período (variando entre 3,74 e 9,91), o que revela que o endividamento é uma questão crítica para um grupo muito restrito de entes, enquanto a grande maioria mantém dívidas per capita quase irrelevantes.
-
-O boxplot na $\ref{fig-box15}$ ilustra visualmente esse cenário de "pontos fora da curva". A escala do gráfico é dominada por outliers de magnitude excepcional, com destaque para o ano de 2020, que registrou um pico de 108.770,30. Mesmo com a queda nos valores máximos nos anos seguintes, 2024 ainda apresentou um outlier superior de 17.178,46. No limite inferior, nota-se a presença de valores negativos atípicos, como o mínimo de -13.509,07 em 2024, que podem indicar ajustes contábeis, créditos a receber ou reversões de provisões. Em resumo, a dívida per capita não segue um padrão de normalidade, sendo caracterizada por uma massa de dados próxima a zero e casos isolados de altíssimo impacto financeiro que distorcem as métricas globais.
-
-#### Comprometimento das receitas correntes com o endividamento
-Variável quantitativa contínua referente ao comprometimento das receitas correntes com endividamento, ou seja, quão "taxadas" são as receitas correntes com dívidas. 
-
-::: {#quad-quadro19 layout-align="center" quad-pos="H"}
-```{=latex}
-
-	\begin{tabular} { | l |
-			S[table-format = 0.2]
-			S[table-format = 0.2]
-			S[table-format = 0.2]
-			S[table-format = NaN.2]
-			S[table-format = -1.2]
-			|}
-	\hline
-		\textbf{Estatística} & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} \\
-		\hline
-		Média & 0,14 & 0,07 & 0,06 & 0,07 & 0,06 \\
-		Desvio Padrão & 0,45 & 0,14 & 0,09 & 0,15 & 0,19 \\
-		Variância & 0,2 & 0,02 & 0,01 & 0,02 & 0,04 \\
-		Mínimo & -0,02 & -0,03 & -0,02 & 0 & -0,05 \\
-		1º Quartil & 0 & 0 & 0 & 0,01 & 0 \\
-		Mediana & 0,02 & 0,03 & 0,02 & 0,02 & 0,02 \\
-		3º Quartil & 0,08 & 0,08 & 0,08 & 0,07 & 0,05 \\
-		Máximo & 3,26 & 0,89 & 0,51 & 1,32 & 1,67 \\
-	\hline
-	\end{tabular}
-
-
-```
-
-Medidas resumo do comprometimento das receitas correntes com o endividamento
-:::
-
-```{r}
-#| label: fig-box16
-#| fig-cap: "Boxplot comprometimento das receitas correntes com o endividamento"
-
-box16
-```
-
-O indicador de comprometimento das receitas com o endividamento ([**Quadro** @quad-quadro19] e $\ref{fig-box16}$) revela uma estrutura financeira majoritariamente saudável e conservadora. Durante todo o período de 2020 a 2024, a mediana manteve-se extremamente baixa (entre 0,02 e 0,03), indicando que, para a grande maioria dos entes, a dívida consome uma parcela mínima (cerca de 2% a 3%) das receitas correntes. A média também apresentou uma tendência de queda e estabilização, recuando de 0,14 em 2020 para 0,06 em 2024, o que sugere um controle mais rígido do endividamento ao longo dos anos.
-
-O boxplot na $\ref{fig-box16}$ evidencia que a distribuição é caracterizada por "caixas" muito achatadas próximas ao zero, reforçando a homogeneidade de baixo endividamento na base da amostra. Entretanto, a presença de outliers severos no limite superior indica casos isolados de alto estresse financeiro, com destaque para o ano de 2020, que registrou um comprometimento máximo de 3,26 (onde a dívida superava em mais de três vezes a receita corrente). Embora esses picos tenham reduzido nos anos seguintes, o valor máximo de 1,67 em 2024 ainda sinaliza a existência de entes com sérios desafios de sustentabilidade fiscal, contrastando drasticamente com o perfil equilibrado do restante do grupo.
 
 ### Fatores determinantes
 
@@ -467,13 +433,13 @@ Variável quantitativa discreta que diz quantas áreas diferentes de atuação c
 	\hline
 		\textbf{Estatística} & \textbf{Valor} \\
 		\hline
-		Média & 9,42 \\
-		Desvio Padrão & 11,92 \\
-		Variância & 142,01 \\
+		Média & 9.42 \\
+		Desvio Padrão & 11.92 \\
+		Variância & 142.01 \\
 		Mínimo & 1 \\
 		1º Quartil & 1 \\
 		Mediana & 3 \\
-		3º Quartil & 15,75 \\
+		3º Quartil & 15.75 \\
 		Máximo & 49 \\
 	\hline
 	\end{tabular}
@@ -698,23 +664,23 @@ Variável completamente vazia no banco de dados, foi desconsiderada para a anál
 ::: {#quad-quadro9 layout-align="center" quad-pos="H"}
 ```{=latex}
 	\begin{tabular} { | l |
-			S[table-format = 0.2]
-			S[table-format = 0.2]
-			S[table-format = -1.2]
-			S[table-format = -Inf.2]
-			S[table-format = -1.2]
+			S[table-format = 1.2]
+			S[table-format = 1.2]
+			S[table-format = 1.2]
+			S[table-format = 1.2]
+			S[table-format = 1.2]
 			|}
 	\hline
 		\textbf{Estatística} & \textbf{2020} & \textbf{2021} & \textbf{2022} & \textbf{2023} & \textbf{2024} \\
 		\hline
-		Média & 0,29 & 0,28 & 0,29 & 0,25 & 0,26 \\
-		Desvio Padrão & 0,29 & 0,27 & 0,27 & 0,25 & 0,26 \\
-		Variância & 0,08 & 0,07 & 0,07 & 0,06 & 0,07 \\
+		Média & 0.29 & 0.28 & 0.29 & 0.25 & 0.26 \\
+		Desvio Padrão & 0.29 & 0.27 & 0.27 & 0.25 & 0.26 \\
+		Variância & 0.08 & 0.07 & 0.07 & 0.06 & 0.07 \\
 		Mínimo & 0 & 0 & 0 & 0 & 0 \\
-		1º Quartil & 0,06 & 0,06 & 0,08 & 0,06 & 0,05 \\
-		Mediana & 0,17 & 0,16 & 0,17 & 0,15 & 0,14 \\
-		3º Quartil & 0,54 & 0,55 & 0,53 & 0,43 & 0,45 \\
-		Máximo & 1 & 0,85 & 1,3 & 0,84 & 0,99 \\
+		1º Quartil & 0.06 & 0.06 & 0.08 & 0.06 & 0.05 \\
+		Mediana & 0.17 & 0.16 & 0.17 & 0.15 & 0.14 \\
+		3º Quartil & 0.54 & 0.55 & 0.53 & 0.43 & 0.45 \\
+		Máximo & 1 & 0.85 & 1.3 & 0.84 & 0.99 \\
 	\hline
 	\end{tabular}
 	
