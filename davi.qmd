@@ -14,8 +14,8 @@ source("rdocs/davi.R")
 
 ### Indicadores
 
-#### Receita per capita
-Variável quantitativa contínua que indica a receita per capita. 
+#### Receita *per capita*
+Variável quantitativa contínua que indica a receita *per capita*. 
 
 ::: {#quad-quadro12 layout-align="center" quad-pos="H"}
 ```{=latex}
@@ -43,19 +43,19 @@ Variável quantitativa contínua que indica a receita per capita.
 
 ```
 
-Medidas resumo das Receitas per Capita
+Medidas resumo das Receitas *per Capita*
 :::
 
 ```{r}
 #| label: fig-box18
-#| fig-cap: "Boxplot da receita per capita"
+#| fig-cap: "Boxplot da receita *per capita*"
 
 box18
 ```
 
-A análise da receita per capita ([**Quadro** @quad-quadro12] e $\ref{fig-box18}$) revela uma mudança drástica no perfil financeiro das localidades a partir de 2023. Nos anos de 2021 e 2022, os dados apresentavam médias elevadas (16,72 e 14,27, respectivamente) e uma variabilidade extrema, com desvios padrão que ultrapassavam a marca de 140,00. Entretanto, a partir de 2023, houve uma redução severa tanto nos valores médios (caindo para 0,43) quanto na dispersão dos dados. Essa queda abrupta sugere uma alteração estrutural na arrecadação ou na forma de contabilização das receitas, resultando em uma distribuição muito mais compacta e de valores baixos no último biênio.
+A análise da receita *per capita* ([**Quadro** @quad-quadro12] e $\ref{fig-box18}$) revela uma mudança drástica no perfil financeiro das localidades a partir de 2023. Nos anos de 2021 e 2022, os dados apresentavam médias elevadas (16,72 e 14,27, respectivamente) e uma variabilidade extrema, com desvios padrão que ultrapassavam a marca de 140,00. Entretanto, a partir de 2023, houve uma redução severa tanto nos valores médios (caindo para 0,43) quanto na dispersão dos dados. Essa queda abrupta sugere uma alteração estrutural na arrecadação ou na forma de contabilização das receitas, resultando em uma distribuição muito mais compacta e de valores baixos no último biênio.
 
-O boxplot na $\ref{fig-box18}$ evidencia que a série histórica é marcada por outliers de altíssima magnitude no primeiro biênio, com valores máximos atingindo 1.944,22 em 2021 e 1.627,23 em 2022. Esses pontos atípicos distorcem significativamente a média, já que a mediana em todos os anos analisados é 0,00, indicando que a grande maioria das observações não registra receita per capita expressiva. No biênio final (2023-2024), os valores máximos caíram para o patamar de 16,00, eliminando os picos extremos vistos anteriormente e consolidando um cenário de receitas per capita residuais para a quase totalidade da amostra.
+O boxplot na $\ref{fig-box18}$ evidencia que a série histórica é marcada por outliers de altíssima magnitude no primeiro biênio, com valores máximos atingindo 1.944,22 em 2021 e 1.627,23 em 2022. Esses pontos atípicos distorcem significativamente a média, já que a mediana em todos os anos analisados é 0,00, indicando que a grande maioria das observações não registra receita per capita expressiva. No biênio final (2023-2024), os valores máximos caíram para o patamar de 16,00, eliminando os picos extremos vistos anteriormente e consolidando um cenário de receitas *per capita* residuais para a quase totalidade da amostra.
 
 #### Participação dos gastos operacionais
 Varável quantitativa contínua que aponta a participação dos consórcios nos gastos operacionais 
