@@ -610,7 +610,7 @@ Dentre os indicadores de saneamento analisados, a coleta de lixo ([**Quadro** @q
 
 O boxplot da $\ref{fig-box4}$ evidencia essa eficiência: o 3º quartil atinge 0,95, e o valor máximo chega a 1,00 (100%), indicando a existência de locais com universalização total do serviço. Entretanto, a haste inferior longa e a presença de outliers (valores atípicos) abaixo de 0,70 revelam que ainda existem pontos críticos com cobertura mínima de 0,65. Apesar desses casos isolados, o intervalo interquartílico (entre 0,84 e 0,95) demonstra que 75% da amostra possui uma taxa de coleta de lixo superior a 84%, consolidando este como o serviço de saneamento mais abrangente entre os estudados.
 
-#### Gasto per capita
+#### Gasto *per capita*
 ::: {#quad-quadro8 layout-align="center" quad-pos="H"}
 ```{=latex}
 	\begin{tabular} { | l |
@@ -636,19 +636,19 @@ O boxplot da $\ref{fig-box4}$ evidencia essa eficiência: o 3º quartil atinge 0
 	
 ```
 
-Medidas resumo dos gastos per capita
+Medidas resumo dos gastos *per capita*
 :::	
 
 ```{r}
 #| label: fig-box6
-#| fig-cap: "Boxplot dos gastos per capita"
+#| fig-cap: "Boxplot dos gastos *per capita*"
 
 box6
 ```
 
-A análise da evolução temporal dos gastos per capita ([**Quadro** @quad-quadro8] e $\ref{fig-box6}$) revela uma tendência de crescimento consistente e acelerado no período de cinco anos. A média dos gastos subiu de 1.028,28 em 2020 para 1.786,53 em 2024, representando um aumento de aproximadamente 73,7% no período. Acompanhando o aumento dos valores centrais, observa-se uma elevação significativa na dispersão dos dados: o desvio padrão quase dobrou, saltando de 241,13 para 451,30, o que indica que as disparidades de investimento entre as localidades se acentuaram drasticamente à medida que os orçamentos cresceram.
+A análise da evolução temporal dos gastos *per capita* ([**Quadro** @quad-quadro8] e $\ref{fig-box6}$) revela uma tendência de crescimento consistente e acelerado no período de cinco anos. A média dos gastos subiu de 1.028,28 em 2020 para 1.786,53 em 2024, representando um aumento de aproximadamente 73,7% no período. Acompanhando o aumento dos valores centrais, observa-se uma elevação significativa na dispersão dos dados: o desvio padrão quase dobrou, saltando de 241,13 para 451,30, o que indica que as disparidades de investimento entre as localidades se acentuaram drasticamente à medida que os orçamentos cresceram.
 
-O boxplot da $\ref{fig-box6}$ evidencia que, embora a base da distribuição (mediana) tenha subido de forma gradual, o fenômeno mais marcante é o surgimento de outliers extremos a partir de 2022. Enquanto em 2020 o valor máximo era de 2.348,31, em 2024 foram registrados picos de até 4.637,27. Esses valores atípicos, representados pelos pontos acima das hastes, sugerem casos excepcionais de investimento que superam em mais de duas vezes a mediana do grupo (1.729,20 em 2024). Essa configuração indica que o crescimento do gasto per capita não foi uniforme, criando um cenário de maior desigualdade financeira entre os pontos analisados no último biênio.
+O boxplot da $\ref{fig-box6}$ evidencia que, embora a base da distribuição (mediana) tenha subido de forma gradual, o fenômeno mais marcante é o surgimento de outliers extremos a partir de 2022. Enquanto em 2020 o valor máximo era de 2.348,31, em 2024 foram registrados picos de até 4.637,27. Esses valores atípicos, representados pelos pontos acima das hastes, sugerem casos excepcionais de investimento que superam em mais de duas vezes a mediana do grupo (1.729,20 em 2024). Essa configuração indica que o crescimento do gasto *per capita* não foi uniforme, criando um cenário de maior desigualdade financeira entre os pontos analisados no último biênio.
 
 #### Covid
 Variável completamente vazia no banco de dados, foi desconsiderada para a análise, mas fica aqui a observação.
@@ -694,7 +694,7 @@ A análise da proporção das despesas com pessoal em relação às despesas tot
 
 O boxplot da $\ref{fig-box7}$ e as medidas de quartis confirmam essa disparidade: enquanto 50% da amostra gasta entre 5% e 45% (1º e 3º quartis de 2024) do seu orçamento com pessoal, existem localidades que atingem o patamar máximo próximo a 1,00 (100%) em quase todos os anos. Um destaque importante é o ano de 2022, que apresenta um outlier extremo de 1,30, sugerindo um caso atípico onde as despesas de pessoal superaram o orçamento total planejado ou pode apresentar uma observação errada no banco de dados. De modo geral, o estreitamento das caixas nos anos de 2023 e 2024 indica uma leve convergência para gastos menores, embora a amplitude total (mínimo de 0,00 e máximo próximo a 1,00) demonstre que a gestão desse recurso ainda varia drasticamente entre os entes analisados.
 
-#### Produção ambulatorial per capita 
+#### Produção ambulatorial *per capita *
 
 
 ::: {#quad-quadro10 layout-align="center" quad-pos="H"}
@@ -722,17 +722,17 @@ O boxplot da $\ref{fig-box7}$ e as medidas de quartis confirmam essa disparidade
 	
 ```
 
-Medidas resumo da produção ambultorial per capita
+Medidas resumo da produção ambultorial *per capita*
 :::	
 
 ```{r}
 #| label: fig-box8
-#| fig-cap: "Boxplot das produções ambulatoriais per capita"
+#| fig-cap: "Boxplot das produções ambulatoriais *per capita*"
 
 box8
 ```
 
-A produção ambulatorial per capita ([**Quadro** @quad-quadro10] e $\ref{fig-box8}$) apresentou um crescimento vigoroso e ininterrupto ao longo do período analisado. A média saltou de 8,11 em 2020 para 13,38 em 2024, um aumento expressivo de aproximadamente 65%. Esse avanço é acompanhado por um aumento na dispersão dos dados, com o desvio padrão subindo de 4,89 para 6,91, indicando que, embora a oferta de serviços ambulatoriais tenha se expandido globalmente, a diferença entre as localidades que mais produzem e as que menos produzem tornou-se mais acentuada. A distribuição mantém uma assimetria positiva, com a média consistentemente acima da mediana, reforçada por valores extremamente altos em certas regiões.
+A produção ambulatorial *per capita*([**Quadro** @quad-quadro10] e $\ref{fig-box8}$) apresentou um crescimento vigoroso e ininterrupto ao longo do período analisado. A média saltou de 8,11 em 2020 para 13,38 em 2024, um aumento expressivo de aproximadamente 65%. Esse avanço é acompanhado por um aumento na dispersão dos dados, com o desvio padrão subindo de 4,89 para 6,91, indicando que, embora a oferta de serviços ambulatoriais tenha se expandido globalmente, a diferença entre as localidades que mais produzem e as que menos produzem tornou-se mais acentuada. A distribuição mantém uma assimetria positiva, com a média consistentemente acima da mediana, reforçada por valores extremamente altos em certas regiões.
 
 O boxplot da $\ref{fig-box8}$ ilustra claramente essa expansão: o 3º quartil de 2024 (15,56) já supera o valor máximo (excluindo outliers) de 2020, demonstrando um novo patamar de atendimento. No entanto, a presença de outliers severos em todos os anos chama a atenção, com um pico de 41,54 em 2024, o que representa mais de três vezes a mediana do mesmo ano (12,95). Enquanto a base da produção (mínimo) subiu de 0,15 para 1,18, sugerindo uma melhoria no piso de atendimento, os pontos atípicos no topo do gráfico indicam que algumas localidades atingiram níveis de produtividade ambulatorial muito fora da curva comum, possivelmente devido a centros de referência ou investimentos maciços focalizados.
 

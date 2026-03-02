@@ -49,8 +49,8 @@ library(tidyr)
 library(stringr)
 
 # 1. Caminho do arquivo
-caminho <- "C:/Users/david/Downloads/Eficiência Financeira - Dados Finais corrigida 2 (2).xlsx"
-
+#caminho <- "C:/Users/david/Downloads/Eficiência Financeira - Dados Finais corrigida 2 (2).xlsx"
+caminho<- "C:/Users/DELL/Downloads/Eficiência Financeira - Dados Finais corrigida 2 (2).xlsx"
 # 2. Ler planilha inteira sem assumir cabeçalho
 raw <- read_excel(caminho, sheet = "Indicadores", col_names = FALSE)
 
@@ -263,7 +263,8 @@ box14 <- df_limpo %>%
 
 
 # FATORES DETERMINANTES ---------------------------------------------------------------------------------------------------------------
-df <- read_excel("C:/Users/david/Downloads/Fatores determinantes - Dados finais.xlsx", sheet = "Fatores determinantes")
+#df <- read_excel("C:/Users/david/Downloads/Fatores determinantes - Dados finais.xlsx", sheet = "Fatores determinantes")
+df<- read_excel("C:/ESTAT/2026001-Flavia/Fatores determinantes - Dados finais.xlsx", sheet= "Fatores determinantes")
 df <- df %>% clean_names()
 
 # Idade
