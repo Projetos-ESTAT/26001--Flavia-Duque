@@ -43,35 +43,59 @@ theme_estat <- function(discreto = FALSE, ...) { # Adicionamos o argumento 'disc
   )
 }
 
-caminho <- "C:/Users/david/Downloads/Eficiência Financeira - Dados finais.xlsx"
+library(readxl)
+library(dplyr)
+library(tidyr)
+library(stringr)
 
-# 2. Ler os nomes (Anos na linha 1 e Indicadores na linha 2)
-# Pegamos a linha 1 para os anos
-anos <- read_excel(caminho, sheet = "Indicadores", n_max = 0) %>% names()
-# Pegamos a linha 2 para os indicadores
-indicadores <- read_excel(caminho, sheet = "Indicadores", skip = 1, n_max = 0) %>% names()
+# 1. Caminho do arquivo
+caminho <- "C:/Users/david/Downloads/Eficiência Financeira - Dados Finais corrigida 2 (2).xlsx"
 
-# 3. Ler os dados ignorando o cabeçalho bagunçado
-dados <- read_excel(caminho, sheet = "Indicadores", skip = 2, col_names = FALSE)
+# 2. Ler planilha inteira sem assumir cabeçalho
+raw <- read_excel(caminho, sheet = "Indicadores", col_names = FALSE)
 
-# 4. Criar nomes de colunas únicos (Ex: "2024_Receita per capita")
-# Ajustamos os nomes das colunas 3 em diante (as 2 primeiras são ID e Nome)
-nomes_completos <- c("ID", "Nome")
+# 3. Separar linhas do cabeçalho
+anos <- as.character(unlist(raw[1, ]))
+indicadores <- as.character(unlist(raw[2, ]))
+
+# 4. Dados começam na linha 3
+dados <- raw[-c(1,2), ]
+
+# 5. Preencher anos corretamente (carregar último ano válido)
 ano_atual <- ""
-
-for(i in 3:length(anos)) {
-  if(!str_detect(anos[i], "[:digit:]{4}")) { 
-    # Se o R leu como "...3", mantemos o ano anterior
-    anos[i] <- ano_atual 
-  } else {
+for(i in seq_along(anos)) {
+  
+  if(!is.na(anos[i]) && str_detect(anos[i], "[0-9]{4}")) {
     ano_atual <- anos[i]
+  } else {
+    anos[i] <- ano_atual
   }
-  nomes_completos <- c(nomes_completos, paste0(anos[i], "|", indicadores[i]))
 }
 
+# 6. Criar nomes de colunas seguros
+nomes_completos <- c("ID", "Nome")
+
+for(i in 3:length(anos)) {
+  
+  indicador_atual <- ifelse(
+    is.na(indicadores[i]) | indicadores[i] == "",
+    paste0("coluna_", i),
+    indicadores[i]
+  )
+  
+  nomes_completos <- c(
+    nomes_completos,
+    paste0(anos[i], "|", indicador_atual)
+  )
+}
+
+# 7. Aplicar nomes
 colnames(dados) <- nomes_completos
 
-# 5. Transformar para o formato Long
+# 8. Remover possíveis colunas com nome NA (blindagem extra)
+dados <- dados[, !is.na(colnames(dados))]
+
+# 9. Transformar para formato Long
 df_final <- dados %>%
   pivot_longer(
     cols = -c(ID, Nome),
@@ -80,25 +104,30 @@ df_final <- dados %>%
     values_to = "Valor"
   )
 
+# 10. Limpeza final
 df_limpo <- df_final %>%
   mutate(
-    # 1. Limpa os "..." e tudo depois (sujeira do Excel)
+    
+    # Limpa sujeira tipo "...3"
     across(where(is.character), ~ str_remove(., "\\.\\.\\..*")),
     
-    # 2. Padronização manual (Snake Case) sem adicionar números
-    Indicador = Indicador %>% 
-      str_to_lower() %>%                             # Tudo minúsculo
-      iconv(to = "ASCII//TRANSLIT") %>%              # Remove acentos
-      str_replace_all("[^a-z0-9]+", "_") %>%         # Troca espaços e símbolos por _
-      str_remove_all("^_|_$"),                       # Remove _ no início ou fim
+    # Padroniza Indicador em snake_case
+    Indicador = Indicador %>%
+      str_to_lower() %>%
+      iconv(to = "ASCII//TRANSLIT") %>%
+      str_replace_all("[^a-z0-9]+", "_") %>%
+      str_remove_all("^_|_$"),
     
-    # 3. Limpeza final de Ano e espaços
     Ano = as.numeric(str_trim(Ano))
+    
   ) %>%
   filter(!is.na(Ano), Indicador != "")
 
+# Resultado final
+df_limpo
 
-# receita per capita - não vale a pena o boxplot pq 75% dos dados são exatamente 0,00, fica feio e não diz muito
+
+# receita per capita
 df_limpo %>%
   filter(Indicador == "receita_per_capita") %>%
   mutate(Valor = as.numeric(Valor)) %>% 
@@ -117,7 +146,7 @@ box18 <- df_limpo %>%
   labs(x = "Ano", y = "Receita per capita") +
   theme_estat(discreto = TRUE)
 
-# participação dos gastos operacionais - não vale a pena o boxplot pq 75% dos dados são exatamente 0,00, fica feio e não diz muito
+# participação dos gastos operacionais
 df_limpo %>%
   filter(Indicador == "participacao_dos_gastos_operacionais") %>%
   mutate(Valor = as.numeric(Valor)) %>% 
@@ -174,6 +203,25 @@ box12 <- df_limpo %>%
   labs(x = "Ano", y = "Recursos para cobertura de queda de receita") +
   theme_estat(discreto = TRUE)
 
+# despesa com pessoal/despesa total
+df_limpo %>%
+  filter(Indicador == "despesa_com_pessoal_despesa_total") %>%
+  mutate(Valor = as.numeric(Valor)) %>% 
+  filter(!is.na(Valor)) %>%  
+  group_by(Ano) %>%
+  print_quadro_resumo(var_name = Valor)
+
+box19 <- df_limpo %>%
+  filter(Indicador == "despesa_com_pessoal_despesa_total") %>%
+  mutate(Valor = as.numeric(Valor)) %>% 
+  filter(!is.na(Valor)) %>% 
+  ggplot() +
+  aes(x = as.factor(Ano), y = Valor) +
+  geom_boxplot(fill = "#A11D21", width = 0.5) +
+  stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
+  labs(x = "Ano", y = "Despesa com pessoal/Despesa total") +
+  theme_estat(discreto = TRUE)
+
 # recursos para cobertura de obrigações correntes
 df_limpo %>%
   filter(Indicador == "recursos_para_cobertura_de_obrigacoes_correntes") %>%
@@ -212,49 +260,6 @@ box14 <- df_limpo %>%
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "Ano", y = "Comprometimento das receitas com as obrigações correntes") +
   theme_estat(discreto = TRUE)
-
-# dívida per capita
-df_limpo %>%
-  filter(Indicador == "divida_per_capita") %>%
-  mutate(Valor = as.numeric(Valor)) %>% 
-  filter(!is.na(Valor)) %>%  
-  group_by(Ano) %>%
-  print_quadro_resumo(var_name = Valor)
-
-box15 <- df_limpo %>%
-  filter(Indicador == "divida_per_capita") %>%
-  mutate(Valor = as.numeric(Valor)) %>% 
-  filter(!is.na(Valor)) %>% 
-  ggplot() +
-  aes(x = as.factor(Ano), y = Valor) +
-  geom_boxplot(fill = "#A11D21", width = 0.5) +
-  stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
-  labs(x = "Ano", y = "Dívida per capita") +
-  theme_estat(discreto = TRUE)
-
-# comprometimento das receitas correntes com o endividamento
-df_limpo %>%
-  filter(Indicador == "comprometimento_das_receitas_correntes_com_o_endividamento") %>%
-  mutate(Valor = as.numeric(Valor)) %>% 
-  filter(!is.na(Valor)) %>%  
-  group_by(Ano) %>%
-  print_quadro_resumo(var_name = Valor)
-
-box16 <- df_limpo %>%
-  filter(Indicador == "comprometimento_das_receitas_correntes_com_o_endividamento") %>%
-  mutate(Valor = as.numeric(Valor)) %>% 
-  filter(!is.na(Valor)) %>% 
-  ggplot() +
-  aes(x = as.factor(Ano), y = Valor) +
-  geom_boxplot(fill = "#A11D21", width = 0.5) +
-  stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
-  labs(x = "Ano", y = "Comprometimento das receitas correntes com o endividamento") +
-  theme_estat(discreto = TRUE)
-
-
-
-
-
 
 
 # FATORES DETERMINANTES ---------------------------------------------------------------------------------------------------------------
@@ -308,6 +313,7 @@ qaa <- df$quantidade_de_areas_de_atuacao
 qaa <- as.data.frame(qaa)
 qaa <- qaa[-1, ]
 qaa <- as.data.frame(qaa)
+qaa <- na.omit(qaa)
 
 qaa %>%
   print_quadro_resumo(var_name = "qaa")
@@ -415,14 +421,17 @@ despesas <- despesas %>%
   pivot_longer(
     cols = everything(),
     names_to = "ano",
-    values_to = "despesa_pessoal_total"
+    values_to = "despesa_pessoal_total",
+    values_drop_na = TRUE  
   )
 despesas[] <- lapply(despesas, as.numeric)
 despesas %>%
   group_by(ano) %>% # caso mais de uma categoria
   print_quadro_resumo(var_name = despesa_pessoal_total)
 
-box7 <- ggplot(despesas) +
+box7 <- despesas %>% 
+  filter(!is.na(despesa_pessoal_total)) %>% # Limpa antes de entrar no ggplot
+  ggplot() +
   aes(x = as.factor(ano), y = despesa_pessoal_total) +
   geom_boxplot(fill = "#A11D21", width = 0.5) +
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
