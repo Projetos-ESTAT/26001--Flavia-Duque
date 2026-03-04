@@ -145,7 +145,7 @@ box18 <- df_limpo %>%
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "Ano", y = "Receita per capita") +
   theme_estat(discreto = TRUE)
-
+#box18
 # participação dos gastos operacionais
 df_limpo %>%
   filter(Indicador == "participacao_dos_gastos_operacionais") %>%
@@ -164,7 +164,7 @@ box17 <- df_limpo %>%
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "Ano", y = "Participação dos gastos operacionais") +
   theme_estat(discreto = TRUE)
-
+#box17
 # cobertura de despesas
 df_limpo %>%
   filter(Indicador == "cobertura_de_despesas") %>%
@@ -183,7 +183,7 @@ box11 <- df_limpo %>%
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "Ano", y = "Índice de Cobertura de Despesas") +
   theme_estat(discreto = TRUE)
-
+#box11
 # recursos para cobertura de queda de receita
 df_limpo %>%
   filter(Indicador == "recursos_para_cobertura_de_queda_de_receita") %>%
@@ -202,7 +202,7 @@ box12 <- df_limpo %>%
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "Ano", y = "Recursos para cobertura de queda de receita") +
   theme_estat(discreto = TRUE)
-
+#box12
 # despesa com pessoal/despesa total
 df_limpo %>%
   filter(Indicador == "despesa_com_pessoal_despesa_total") %>%
@@ -221,7 +221,7 @@ box19 <- df_limpo %>%
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "Ano", y = "Despesa com pessoal/Despesa total") +
   theme_estat(discreto = TRUE)
-
+#box19
 # recursos para cobertura de obrigações correntes
 df_limpo %>%
   filter(Indicador == "recursos_para_cobertura_de_obrigacoes_correntes") %>%
@@ -241,7 +241,7 @@ box13 <- df_limpo %>%
   labs(x = "Ano", y = "Recursos para cobertura de obrigações correntes") +
   theme_estat(discreto = TRUE)
 
-
+#box13
 # comprometimento das receitas com as obrigações correntes
 df_limpo %>%
   filter(Indicador == "compromentimento_das_receitas_com_as_obrigacoes_correntes") %>%
@@ -261,7 +261,7 @@ box14 <- df_limpo %>%
   labs(x = "Ano", y = "Comprometimento das receitas com as obrigações correntes") +
   theme_estat(discreto = TRUE)
 
-
+#box14
 # FATORES DETERMINANTES ---------------------------------------------------------------------------------------------------------------
 #df <- read_excel("C:/Users/david/Downloads/Fatores determinantes - Dados finais.xlsx", sheet = "Fatores determinantes")
 df<- read_excel("C:/ESTAT/2026001-Flavia/Fatores determinantes - Dados finais.xlsx", sheet= "Fatores determinantes")
@@ -276,7 +276,7 @@ box10 <- ggplot(df) +
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "", y = "Idade") +
   theme_estat(discreto = TRUE)
-
+#box10
 
 # população atendida
 pop_atend <- setNames(df[2:nrow(df), 7:11], c("2024", "2023","2022","2021","2020"))
@@ -300,7 +300,7 @@ box1 <- ggplot(pop_atend) +
      labs(x = "Ano", y = "População atendida") +
      theme_estat(discreto = TRUE)
 
-
+#box1
 # Número de municípios consorciados
 nmc <- df$numero_de_municipios_consorciados
 nmc <- as.data.frame(nmc)
@@ -326,7 +326,7 @@ box5 <- ggplot(qaa) +
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "", y = "Quantidade de áreas de atuação") +
   theme_estat(discreto = TRUE)
-
+#box5
 # índice firjan
 firjan <- setNames(df[2:nrow(df), 15:18], c("2023","2022","2021","2020"))
 firjan <- firjan %>%
@@ -346,7 +346,7 @@ box9 <- ggplot(firjan) +
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "Ano", y = "índice de Firjan") +
   theme_estat(discreto = TRUE)
-
+#box9
 # saneamento básico: conexão a rede de esgoto (percentual)
 saneamento <- df
 colnames(saneamento) <- as.character(saneamento[1, ])
@@ -370,7 +370,7 @@ box2 <- ggplot(saneamento) +
      labs(x = "Conexão à rede de esgoto", y = "Porcentagem (%)") +
      theme_estat(discreto = TRUE)
 
-
+#box2
 # saneamento básico: abastecimento de água pela rede geral (percentual)
 saneamento %>%
   print_quadro_resumo(var_name = "abastecimento_de_agua_pela_rede_geral_percentual")
@@ -382,7 +382,7 @@ box3 <- ggplot(saneamento) +
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "Abastecimento de água pela rede geral", y = "Percentual (%)") +
   theme_estat(discreto = TRUE)
-
+#box3
 # saneamento básico: coleta de lixo (percentual)
 saneamento %>%
   print_quadro_resumo(var_name = "coleta_de_lixo_percentual")
@@ -394,7 +394,7 @@ box4 <- ggplot(saneamento) +
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "Abastecimento de água pela rede geral", y = "Percentual (%)") +
   theme_estat(discreto = TRUE)
-
+#box4
 # gasto per capita
 gasto_cap <- setNames(df[2:nrow(df), 22:26], c("2024","2023","2022","2021","2020"))
 gasto_cap <- gasto_cap %>%
@@ -415,7 +415,7 @@ box6 <- ggplot(gasto_cap) +
   labs(x = "Ano", y = "Gasto per capita") +
   theme_estat(discreto = TRUE)
 
-
+#box6
 # despesa com pessoal/despesa total
 despesas <- setNames(df[2:nrow(df), 32:36], c("2024","2023","2022","2021","2020"))
 despesas <- despesas %>%
@@ -438,7 +438,7 @@ box7 <- despesas %>%
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "Ano", y = "Despesa com pessoal/Despesa Total") +
   theme_estat(discreto = TRUE)
-
+#box7
 # produção ambulatorial per capita
 ambulatorial <- setNames(df[2:nrow(df), 37:41], c("2024","2023","2022","2021","2020"))
 ambulatorial <- ambulatorial %>%
@@ -458,4 +458,4 @@ box8 <- ggplot(ambulatorial) +
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "Ano", y = "Produção ambulatorial per capita") +
   theme_estat(discreto = TRUE)
-
+box8
