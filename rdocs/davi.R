@@ -264,19 +264,21 @@ box14 <- df_limpo %>%
 #box14
 # FATORES DETERMINANTES ---------------------------------------------------------------------------------------------------------------
 #df <- read_excel("C:/Users/david/Downloads/Fatores determinantes - Dados finais.xlsx", sheet = "Fatores determinantes")
-df<- read_excel("C:/ESTAT/2026001-Flavia/Fatores determinantes - Dados finais.xlsx", sheet= "Fatores determinantes")
+#df<- read_excel("C:/ESTAT/2026001-Flavia/Fatores determinantes - Dados finais.xlsx", sheet= "Fatores determinantes")
+df<- read_excel("C:/Users/DELL/Downloads/Fatores determinantes - Dados finais (1).xlsx", sheet= "Fatores determinantes")
 df <- df %>% clean_names()
 
 # Idade
-print_quadro_resumo(df, idade)
-box10 <- ggplot(df) +
+df_idade <- df %>% filter(!is.na(idade))
+print_quadro_resumo(df_idade, idade)
+box10 <- ggplot(df_idade) +
   aes(x = factor(""), y = idade) +
   geom_boxplot(fill = "#A11D21", width = 0.5) +
   guides(fill = "none") + 
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "", y = "Idade") +
   theme_estat(discreto = TRUE)
-#box10
+box10
 
 # população atendida
 pop_atend <- setNames(df[2:nrow(df), 7:11], c("2024", "2023","2022","2021","2020"))
@@ -300,7 +302,7 @@ box1 <- ggplot(pop_atend) +
      labs(x = "Ano", y = "População atendida") +
      theme_estat(discreto = TRUE)
 
-#box1
+box1
 # Número de municípios consorciados
 nmc <- df$numero_de_municipios_consorciados
 nmc <- as.data.frame(nmc)
@@ -326,7 +328,7 @@ box5 <- ggplot(qaa) +
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "", y = "Quantidade de áreas de atuação") +
   theme_estat(discreto = TRUE)
-#box5
+box5
 # índice firjan
 firjan <- setNames(df[2:nrow(df), 15:18], c("2023","2022","2021","2020"))
 firjan <- firjan %>%
@@ -346,7 +348,7 @@ box9 <- ggplot(firjan) +
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "Ano", y = "índice de Firjan") +
   theme_estat(discreto = TRUE)
-#box9
+box9
 # saneamento básico: conexão a rede de esgoto (percentual)
 saneamento <- df
 colnames(saneamento) <- as.character(saneamento[1, ])
@@ -382,7 +384,7 @@ box3 <- ggplot(saneamento) +
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "Abastecimento de água pela rede geral", y = "Percentual (%)") +
   theme_estat(discreto = TRUE)
-#box3
+box3
 # saneamento básico: coleta de lixo (percentual)
 saneamento %>%
   print_quadro_resumo(var_name = "coleta_de_lixo_percentual")
@@ -394,7 +396,7 @@ box4 <- ggplot(saneamento) +
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "Abastecimento de água pela rede geral", y = "Percentual (%)") +
   theme_estat(discreto = TRUE)
-#box4
+box4
 # gasto per capita
 gasto_cap <- setNames(df[2:nrow(df), 22:26], c("2024","2023","2022","2021","2020"))
 gasto_cap <- gasto_cap %>%
@@ -415,9 +417,9 @@ box6 <- ggplot(gasto_cap) +
   labs(x = "Ano", y = "Gasto per capita") +
   theme_estat(discreto = TRUE)
 
-#box6
+box6
 # despesa com pessoal/despesa total
-despesas <- setNames(df[2:nrow(df), 32:36], c("2024","2023","2022","2021","2020"))
+despesas <- setNames(df[2:nrow(df), 27:31], c("2024","2023","2022","2021","2020"))
 despesas <- despesas %>%
   pivot_longer(
     cols = everything(),
@@ -438,24 +440,69 @@ box7 <- despesas %>%
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "Ano", y = "Despesa com pessoal/Despesa Total") +
   theme_estat(discreto = TRUE)
-#box7
+box7
 # produção ambulatorial per capita
-ambulatorial <- setNames(df[2:nrow(df), 37:41], c("2024","2023","2022","2021","2020"))
-ambulatorial <- ambulatorial %>%
+#ambulatorial <- setNames(df[2:nrow(df), 37:41], c("2024","2023","2022","2021","2020"))
+#ambulatorial <- ambulatorial %>%
+ # pivot_longer(
+  #  cols = everything(),
+   # names_to = "ano",
+    #values_to = "ambulatorial_pc"
+ # )
+#ambulatorial[] <- lapply(ambulatorial, as.numeric)
+#ambulatorial %>%
+ # group_by(ano) %>% # caso mais de uma categoria
+  #print_quadro_resumo(var_name = ambulatorial_pc)
+
+#ncol_df <- ncol(df)
+#ambulatorial <- df[2:nrow(df), (ncol_df-4):ncol_df] 
+#colnames(ambulatorial) <- c("2024","2023","2022","2021","2020")
+
+#ambulatorial_long <- ambulatorial %>%
+ # pivot_longer(cols = everything(), names_to = "ano", values_to = "ambulatorial_pc") %>%
+  #mutate(ambulatorial_pc = as.numeric(ambulatorial_pc)) %>%
+  #filter(!is.na(ambulatorial_pc))
+
+#ambulatorial_long %>%
+ # group_by(ano) %>%
+  #print_quadro_resumo(var_name = ambulatorial_pc)
+
+#box8 <- ggplot(ambulatorial) +
+ # aes(x = as.factor(ano), y = ambulatorial_pc) +
+  #geom_boxplot(fill = "#A11D21", width = 0.5) +
+  #stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
+  #labs(x = "Ano", y = "Produção ambulatorial per capita") +
+  #theme_estat(discreto = TRUE)
+#box8
+
+ncol_total <- ncol(df)
+amb_cols <- (ncol_total - 4):ncol_total
+
+ambulatorial <- df[2:nrow(df), amb_cols]
+colnames(ambulatorial) <- c("2024", "2023", "2022", "2021", "2020")
+
+# 2. Transformar para formato longo e tratar os dados
+ambulatorial_long <- ambulatorial %>%
   pivot_longer(
     cols = everything(),
     names_to = "ano",
     values_to = "ambulatorial_pc"
-  )
-ambulatorial[] <- lapply(ambulatorial, as.numeric)
-ambulatorial %>%
-  group_by(ano) %>% # caso mais de uma categoria
+  ) %>%
+  # Converter para numérico e REMOVER NAs (essencial para não dar erro no boxplot)
+  mutate(ambulatorial_pc = as.numeric(ambulatorial_pc)) %>%
+  filter(!is.na(ambulatorial_pc))
+
+# 3. Gerar o Quadro Resumo (Certifique-se de usar o dataframe novo 'ambulatorial_long')
+ambulatorial_long %>%
+  group_by(ano) %>%
   print_quadro_resumo(var_name = ambulatorial_pc)
 
-box8 <- ggplot(ambulatorial) +
+# 4. Gerar o Gráfico
+box8 <- ggplot(ambulatorial_long) + # Usar o df que tem a coluna 'ano'
   aes(x = as.factor(ano), y = ambulatorial_pc) +
   geom_boxplot(fill = "#A11D21", width = 0.5) +
   stat_summary(fun = "mean", geom = "point", shape = 23, size = 3, fill = "white") +
   labs(x = "Ano", y = "Produção ambulatorial per capita") +
   theme_estat(discreto = TRUE)
+
 box8
